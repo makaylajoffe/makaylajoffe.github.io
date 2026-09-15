@@ -1,8 +1,536 @@
-<div style="position: relative; width: 100%; height: 0; padding-top: 224.8902%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAG-EgJNs3Y/Bx37hwgkSmD6APWZ1SyHew/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio website for Makayla Joffe, Rutgers Business School marketing student.">
+  <title>Makayla Joffe | Marketing Portfolio</title>
+
+  <style>
+    :root {
+      --navy: #172554;
+      --blue: #2563eb;
+      --light-blue: #eff6ff;
+      --pink: #fce7f3;
+      --accent: #ec4899;
+      --text: #1f2937;
+      --muted: #64748b;
+      --white: #ffffff;
+      --border: #dbeafe;
+    .hero-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 0.7fr;
+  align-items: center;
+  gap: 50px;
+  padding-top: 76px;
+}
+
+.hero {
+  max-width: 770px;
+  padding-top: 0;
+}
+
+.headshot-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.headshot {
+  width: min(280px, 70vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 7px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background-color: #dbeafe;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 760px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 55px;
+  }
+
+  .headshot {
+    width: min(220px, 60vw);
+  }
+}
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background-color: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 22px 0 82px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      max-width: 770px;
+      padding-top: 82px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #bfdbfe;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 1.08;
+    }
+
+    .hero p:not(.eyebrow) {
+      max-width: 690px;
+      margin: 22px 0 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 13px 21px;
+      border-radius: 8px;
+      color: var(--white);
+      background-color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #db2777;
+      transform: translateY(-2px);
+    }
+
+    main {
+      padding: 64px 0;
+    }
+
+    section {
+      margin-bottom: 76px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 2rem;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin: 0 0 25px;
+      color: var(--muted);
+    }
+
+    .statement {
+      padding: 30px;
+      border-left: 7px solid var(--accent);
+      border-radius: 8px;
+      background-color: var(--white);
+      box-shadow: 0 10px 28px rgba(23, 37, 84, 0.08);
+      font-size: 1.2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--navy);
+      background-color: var(--light-blue);
+      font-weight: 700;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background-color: var(--white);
+      box-shadow: 0 10px 25px rgba(23, 37, 84, 0.07);
+    }
+
+    .project-label {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .project p:not(.project-label) {
+      color: var(--muted);
+    }
+
+    .project a {
+      margin-top: auto;
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      padding: 24px;
+      border-radius: 12px;
+      background-color: var(--pink);
+    }
+
+    .experience-card h3 {
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .experience-card p {
+      margin: 6px 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 35px;
+      border-radius: 12px;
+      color: var(--white);
+      background-color: var(--navy);
+    }
+
+    .contact h2 {
+      color: var(--white);
+    }
+
+    .contact p {
+      margin-bottom: 0;
+    }
+
+    .contact a {
+      color: #bfdbfe;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid #e2e8f0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .projects,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        padding-bottom: 58px;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      main {
+        padding-top: 48px;
+      }
+
+      .statement,
+      .contact {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="top">
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <a class="logo" href="#top">MAKAYLA JOFFE</a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-layout">
+  <div class="hero">
+    <p class="eyebrow">Rutgers Business School · Marketing</p>
+
+    <h1>Creative, customer-focused marketing with an eye for content and community.</h1>
+
+    <p>
+      I am a Rutgers Business School marketing student who uses digital content,
+      consumer insight, and visual design to help brands build genuine connections
+      with their audiences.
+    </p>
+
+    <a class="button" href="#projects">Explore My Work</a>
+  </div>
+
+  <div class="headshot-wrapper">
+    <img
+      class="headshot"
+      src="images/makayla-headshot.jpg"
+      alt="Headshot of Makayla Joffe"
+    >
+  </div>
 </div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG-EgJNs3Y&#x2F;Bx37hwgkSmD6APWZ1SyHew&#x2F;view?utm_content=DAG-EgJNs3Y&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Marketing Portfolio</a> by makayla
+        <p class="eyebrow">Rutgers Business School · Marketing</p>
+        <h1>Creative, customer-focused marketing with an eye for content and community.</h1>
+
+        <p>
+          I am a Rutgers Business School marketing student who uses digital content,
+          consumer insight, and visual design to help brands build genuine connections
+          with their audiences.
+        </p>
+
+        <a class="button" href="#projects">Explore My Work</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>Personal Statement</h2>
+
+      <p class="statement">
+        I am a Rutgers Business School marketing student with experience in social media
+        content, event marketing, visual design, and customer engagement, passionate
+        about helping brands create memorable experiences and meaningful customer connections.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <p class="section-intro">
+        My skills combine marketing strategy, digital content creation, customer service,
+        visual storytelling, and team leadership.
+      </p>
+
+      <div class="skills" aria-label="Skills list">
+        <span class="skill">Social Media Marketing</span>
+        <span class="skill">Digital Content Creation</span>
+        <span class="skill">Marketing Strategy</span>
+        <span class="skill">Consumer Behavior</span>
+        <span class="skill">Market Research</span>
+        <span class="skill">Event Marketing</span>
+        <span class="skill">Canva</span>
+        <span class="skill">Adobe Photoshop</span>
+        <span class="skill">Adobe Illustrator</span>
+        <span class="skill">Adobe Premiere Pro</span>
+        <span class="skill">After Effects</span>
+        <span class="skill">Final Cut Pro</span>
+        <span class="skill">Customer Engagement</span>
+        <span class="skill">English and Basic Korean</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <p class="section-intro">
+        These projects demonstrate my interest in marketing, customer engagement, content
+        creation, and small-business branding. You can later replace the links with
+        project files, GitHub repositories, Canva presentations, or live demos.
+      </p>
+
+      <div class="projects">
+        <article class="project">
+          <p class="project-label">Marketing & Events</p>
+          <h3>NJ Wedding Pros Social Media Campaign</h3>
+
+          <p>
+            Created engaging video content, promotional campaigns, and creative social posts
+            to strengthen social media visibility, increase audience engagement, and help
+            attract potential clients for a wedding and events business.
+          </p>
+
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            Add project link here →
+          </a>
+        </article>
+
+        <article class="project">
+          <p class="project-label">Business Strategy</p>
+          <h3>Seasonal Menu Business Plan</h3>
+
+          <p>
+            Designed and implemented a business plan for a seasonal menu at McGee Black Irish
+            Coffee Company. The plan contributed to a 30% increase in customer satisfaction
+            ratings and a 25% increase in summer revenue.
+          </p>
+
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            Add project link here →
+          </a>
+        </article>
+
+        <article class="project">
+          <p class="project-label">Branding & Design</p>
+          <h3>Handmade Product Small Business</h3>
+
+          <p>
+            Own and operate a small business selling handmade keychains, stickers, pins, and
+            beaded bracelets. I oversee product design, production, sales, and the visual
+            presentation of the brand.
+          </p>
+
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            Add project link here →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience Highlights</h2>
+
+      <p class="section-intro">
+        Professional and campus experiences that have helped me build marketing,
+        leadership, organization, and communication skills.
+      </p>
+
+      <div class="experience-grid">
+        <article class="experience-card">
+          <h3>Marketing/Event Intern</h3>
+          <p><strong>NJ Wedding Pros · Fair Haven, NJ</strong></p>
+          <p>
+            Supported event execution and developed promotional content aligned with
+            client vision and brand standards.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <h3>Marketing Co-Director</h3>
+          <p><strong>Creative X · Rutgers University</strong></p>
+          <p>
+            Help manage social content, captions, Instagram stories, event reminders,
+            short-form videos, and campus partnership opportunities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Let's Connect</h2>
+
+      <p>
+        Email:
+        <a href="mailto:makaylajoffe@gmail.com">makaylajoffe@gmail.com</a>
+        <br>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/makayla-joffe-81b63b358"
+           target="_blank"
+           rel="noopener">
+          linkedin.com/in/makayla-joffe-81b63b358
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Makayla Joffe · Marketing Portfolio
+    </div>
+  </footer>
+</body>
+</html>
