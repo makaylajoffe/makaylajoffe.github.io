@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio website for Makayla Joffe, Rutgers Business School marketing student.">
+  <meta
+    name="description"
+    content="Portfolio website for Makayla Joffe, a Rutgers Business School marketing student."
+  >
   <title>Makayla Joffe | Marketing Portfolio</title>
 
   <style>
@@ -17,45 +20,6 @@
       --muted: #64748b;
       --white: #ffffff;
       --border: #dbeafe;
-    .hero-layout {
-  display: grid;
-  grid-template-columns: 1.6fr 0.7fr;
-  align-items: center;
-  gap: 50px;
-  padding-top: 76px;
-}
-
-.hero {
-  max-width: 770px;
-  padding-top: 0;
-}
-
-.headshot-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.headshot {
-  width: min(280px, 70vw);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border: 7px solid rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  background-color: #dbeafe;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 760px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 55px;
-  }
-
-  .headshot {
-    width: min(220px, 60vw);
-  }
-}
     }
 
     * {
@@ -120,9 +84,16 @@
       text-decoration: underline;
     }
 
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.7fr;
+      align-items: center;
+      gap: 50px;
+      padding-top: 76px;
+    }
+
     .hero {
       max-width: 770px;
-      padding-top: 82px;
     }
 
     .eyebrow {
@@ -163,12 +134,29 @@
       transform: translateY(-2px);
     }
 
+    .headshot-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .headshot {
+      width: min(280px, 70vw);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 7px solid rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      background-color: #dbeafe;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    }
+
     main {
       padding: 64px 0;
     }
 
     section {
       margin-bottom: 76px;
+      scroll-margin-top: 25px;
     }
 
     h2 {
@@ -216,6 +204,7 @@
     .project {
       display: flex;
       flex-direction: column;
+      min-height: 100%;
       padding: 26px;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
@@ -309,7 +298,7 @@
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 760px) {
       header {
         padding-bottom: 58px;
       }
@@ -319,8 +308,14 @@
         flex-direction: column;
       }
 
-      .hero {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
         padding-top: 55px;
+      }
+
+      .headshot {
+        width: min(220px, 60vw);
       }
 
       main {
@@ -351,27 +346,29 @@
       </nav>
 
       <div class="hero-layout">
-  <div class="hero">
-    <p class="eyebrow">Rutgers Business School · Marketing</p>
+        <div class="hero">
+          <p class="eyebrow">Rutgers Business School · Marketing</p>
 
-    <h1>Creative, customer-focused marketing with an eye for content and community.</h1>
+          <h1>Creative, customer-focused marketing with an eye for content and community.</h1>
 
-    <p>
-      I am a Rutgers Business School marketing student who uses digital content,
-      consumer insight, and visual design to help brands build genuine connections
-      with their audiences.
-    </p>
+          <p>
+            I am a Rutgers Business School marketing student who uses digital content,
+            consumer insight, and visual design to help brands build genuine connections
+            with their audiences.
+          </p>
 
-    <a class="button" href="#projects">Explore My Work</a>
-  </div>
+          <a class="button" href="#projects">Explore My Work</a>
+        </div>
 
-  <div class="headshot-wrapper">
-    <img
-      class="headshot"
-      src="headshot.JPG"
-      alt="Headshot of Makayla Joffe"
-    >
-  </div>
+        <div class="headshot-wrapper">
+          <img
+            class="headshot"
+            src="images/headshot.JPG"
+            alt="Headshot of Makayla Joffe"
+          >
+        </div>
+      </div>
+    </div>
   </header>
 
   <main class="container">
@@ -415,13 +412,14 @@
       <h2>Projects</h2>
 
       <p class="section-intro">
-        These projects demonstrate my interest in marketing, customer engagement, content
-        creation, and small-business branding. 
+        These projects demonstrate my interest in marketing, customer engagement,
+        content creation, branding, and small-business strategy.
       </p>
 
       <div class="projects">
         <article class="project">
           <p class="project-label">Marketing & Events</p>
+
           <h3>NJ Wedding Pros Social Media Campaign</h3>
 
           <p>
@@ -430,13 +428,18 @@
             attract potential clients for a wedding and events business.
           </p>
 
-          <a href="https://www.instagram.com/njweddingpros/?hl=en" target="_blank" rel="noopener">
-            Instagram link → 
+          <a
+            href="https://www.instagram.com/njweddingpros/?hl=en"
+            target="_blank"
+            rel="noopener"
+          >
+            View NJ Wedding Pros Instagram →
           </a>
         </article>
 
         <article class="project">
           <p class="project-label">Business Strategy</p>
+
           <h3>Seasonal Menu Business Plan</h3>
 
           <p>
@@ -445,22 +448,32 @@
             ratings and a 25% increase in summer revenue.
           </p>
 
-    
+          <a
+            href="https://www.instagram.com/mcgeeblackirishcoffee/"
+            target="_blank"
+            rel="noopener"
+          >
+            View McGee Black Irish Coffee →
           </a>
         </article>
 
         <article class="project">
           <p class="project-label">Branding & Design</p>
+
           <h3>Handmade Product Small Business</h3>
 
           <p>
-            Own and operate a small business selling handmade keychains, stickers, pins, and
-            beaded bracelets. I oversee product design, production, sales, and the visual
-            presentation of the brand.
+            I own and operate a small business selling handmade keychains, stickers, pins,
+            and beaded bracelets. I oversee product design, production, sales, and the
+            visual presentation of the brand.
           </p>
 
-          <a href="https://www.instagram.com/luvbeomshop" target="_blank" rel="noopener">
-           Instagram link →  
+          <a
+            href="https://www.instagram.com/luvbeomshop/"
+            target="_blank"
+            rel="noopener"
+          >
+            View Luv Beom Shop Instagram →
           </a>
         </article>
       </div>
@@ -470,26 +483,52 @@
       <h2>Experience Highlights</h2>
 
       <p class="section-intro">
-        Professional and campus experiences that have helped me build marketing,
-        leadership, organization, and communication skills.
+        Professional and campus experiences that have strengthened my marketing,
+        communication, leadership, and organization skills.
       </p>
 
       <div class="experience-grid">
         <article class="experience-card">
           <h3>Marketing/Event Intern</h3>
+
           <p><strong>NJ Wedding Pros · Fair Haven, NJ</strong></p>
+
           <p>
-            Supported event execution and developed promotional content aligned with
-            client vision and brand standards.
+            Created promotional content and supported event setup to help deliver smooth,
+            visually cohesive events aligned with each client's vision and brand standards.
           </p>
         </article>
 
         <article class="experience-card">
           <h3>Marketing Co-Director</h3>
+
           <p><strong>Creative X · Rutgers University</strong></p>
+
           <p>
-            Help manage social content, captions, Instagram stories, event reminders,
-            short-form videos, and campus partnership opportunities.
+            Help manage social content, captions, Instagram Stories, event reminders, and
+            short-form video while identifying campus partnerships and promotional opportunities.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <h3>Barista</h3>
+
+          <p><strong>McGee Black Irish Coffee Company · Manasquan, NJ</strong></p>
+
+          <p>
+            Use personalized customer service and product recommendations to build relationships
+            with regular customers and support a welcoming, loyalty-driven business environment.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <h3>HARU Dance Member</h3>
+
+          <p><strong>Rutgers University</strong></p>
+
+          <p>
+            Teach K-pop choreography, coordinate formations, and help organize rehearsals for
+            performances while using teamwork and time-management skills.
           </p>
         </article>
       </div>
@@ -503,9 +542,11 @@
         <a href="mailto:makaylajoffe@gmail.com">makaylajoffe@gmail.com</a>
         <br>
         LinkedIn:
-        <a href="https://www.linkedin.com/in/makayla-joffe-81b63b358"
-           target="_blank"
-           rel="noopener">
+        <a
+          href="https://www.linkedin.com/in/makayla-joffe-81b63b358"
+          target="_blank"
+          rel="noopener"
+        >
           linkedin.com/in/makayla-joffe-81b63b358
         </a>
       </p>
