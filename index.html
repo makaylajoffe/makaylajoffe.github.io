@@ -134,22 +134,16 @@
       transform: translateY(-2px);
     }
 
-    .-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 5px; 
-      height: 5px; 
-    }
-
-    . {
-      width: min(280px, 70vw);
+    .headshot {
+      width: min(260px, 60vw);
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border: 7px solid rgba(255, 255, 255, 0.85);
+      border: 6px solid rgba(255, 255, 255, 0.85);
       border-radius: 50%;
       background-color: #dbeafe;
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+      justify-self: center;
+      display: block;
     }
 
     main {
@@ -316,8 +310,8 @@
         padding-top: 55px;
       }
 
-      . {
-        width: min(220px, 60vw);
+      .headshot {
+        width: min(200px, 50vw);
       }
 
       main {
@@ -362,7 +356,7 @@
           <a class="button" href="#projects">Explore My Work</a>
         </div>
 
-        <img src = "headshot.JPG" alt = "headshot" style = "width = 50px; height = 50px; object-fit = cover;">
+        <img class="headshot" src="headshot.JPG" alt="Makayla Joffe headshot">
       </div>
     </div>
   </header>
